@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="contact.css">
+    </head>
+    <body>
+        <center>
+            <table border="4">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <td><input type="text" name="fname" id="fname"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Last Name</th>
+                        <td><input type="text" name="lname" id="lname"></td>
+                    </tr>
+                    <tr>
+                        <th>PhoneNo</th>
+                        <td><input type="text" name="email" id="email"></td>
+                    </tr>
+                    <tr id="btn">
+                        <td colspan="2"><input type="button" name="button" id="button" value="ADD" onclick="AddRow()"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table border="4" id="show">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Phone No</th>
+                    </tr>
+                </thead>
+            </table>
+        </center>
+        <script>
+            var l1=[];
+            var l2=[];
+            var l3=[];
+            var n=1;
+            var x=0;
+            function AddRow(){
+                var addrow = document.getElementById("show");
+                var newrow = addrow.insertRow(n);
+                l1[x] = document.getElementById("fname").value;
+                l2[x] = document.getElementById("lname").value;
+                l3[x] = document.getElementById("email").value;
+
+                var cel1 = newrow.insertCell(0);
+                var cel2 = newrow.insertCell(1);
+                var cel3 = newrow.insertCell(2);
+
+                cel1.innerHTML = l1[x];
+                cel2.innerHTML = l2[x];
+                cel3.innerHTML = l3[x];
+                n++;
+                x++;
+
+            }
+
+        </script>
+    </body>
+    </html>
